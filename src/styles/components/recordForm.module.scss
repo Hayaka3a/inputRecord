@@ -1,0 +1,83 @@
+@use "../color" as cl;
+
+.main {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 34vw;
+  background-color: white;
+  border: 0.5vw dashed gray;
+  text-align: center;
+
+  label {
+    display: block;
+    margin: 3vw;
+    padding: 4vw;
+  }
+
+  input,
+  select,
+  textarea {
+    outline: 0.5vw solid cl.$bl;
+    color: gray;
+  }
+
+  textarea,
+  input:nth-child(1) {
+    width: 90%;
+  }
+
+  .upper {
+    display: flex;
+
+    label {
+      margin: auto;
+      &:nth-child(1) {
+        padding: auto 0;
+        margin-right: 0;
+        text-align: center;
+        input {
+          text-align: center;
+        }
+      }
+      &:nth-child(2) {
+        padding-left: 0;
+        margin-left: 0;
+        margin-top: 0;
+        select {
+          width: 13vh;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  label:nth-child(2) {
+    padding-bottom: 0;
+  }
+
+  label:nth-child(3) {
+    margin-top: 0;
+    padding-top: 0;
+    div {
+      text-align: left;
+    }
+    textarea {
+      height: 30vw;
+    }
+  }
+
+  button {
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 4vw;
+    text-align: center;
+    color: cl.$wh;
+    font-size: 6vw;
+    border: 0.5vw solid cl.$bl;
+    border-radius: 40em;
+    background-color: cl.$bl;
+    cursor: pointer;
+  }
+}

@@ -18,10 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(246, 241, 241);
+  font-size: 5vw;
+}
+
+main {
+  margin-top: 25vw;
+  font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans",
+    "ヒラギノ角ゴシック";
 }
