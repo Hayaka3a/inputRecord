@@ -1,2 +1,2 @@
-\*\* library
+** library
 @supabase/supabase-js
