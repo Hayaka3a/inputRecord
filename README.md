@@ -1,3 +1,3 @@
 **library**
-@supabase/supabase-js
-sass
+- @supabase/supabase-js
+- sass
