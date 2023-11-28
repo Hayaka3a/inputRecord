@@ -1,24 +1,52 @@
 @charset "UTF-8";
 .main {
   width: 100%;
-  height: 30vw;
+  height: 26vw;
   background-color: rgb(20, 108, 148);
   color: rgb(255, 255, 255);
   position: fixed;
   top: 0;
   text-align: center;
-  font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans", "ヒラギノ角ゴシック";
 }
 .main .upperSide {
   display: flex;
+  height: 12vw;
 }
 .main .upperSide h1 {
+  width: 53%;
   color: rgb(246, 241, 241);
   bottom: 0;
-  font-size: 10vw;
+  font-size: 7vw;
   -webkit-text-decoration: underline 0.5vw;
           text-decoration: underline 0.5vw;
   text-decoration-color: rgb(255, 255, 255);
+}
+.main .upperSide .user {
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-top: 4vw;
+  margin-right: 2vw;
+}
+.main .upperSide .user button {
+  border: 0.3vw solid rgb(164, 151, 83);
+  background-color: rgb(164, 151, 83);
+  border-radius: 40em;
+  margin-bottom: 0.2vw;
+  margin-left: 1vw;
+  font-size: 3.2vw;
+}
+.main .upperSide .loginBtn {
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-top: 4vw;
+  margin-right: 2vw;
+  border: 0.3vw solid rgb(157, 194, 210);
+  background-color: rgb(157, 194, 210);
+  border-radius: 40em;
+  font-size: 3.2vw;
+  padding: 1vw;
 }
 .main .lowerSide {
   position: absolute;
@@ -30,10 +58,6 @@
 }
 .main .lowerSide p {
   margin: auto 0;
-}
-.main .lowerSide img {
-  height: 3vh;
-  margin: auto 0.5vw;
 }
 .main .link {
   width: 100%;
@@ -70,4 +94,71 @@
   left: 0.8vw;
   top: 0.8vw;
   z-index: -1;
+}
+
+@media screen and (min-width: 590px) {
+  .main {
+    height: 8.5vw;
+    font-size: 2vh;
+    font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans", "ヒラギノ角ゴシック";
+    display: flex;
+    z-index: 1000;
+  }
+  .main .upperSide {
+    width: 40%;
+    height: 100%;
+    display: flex;
+  }
+  .main .upperSide h1 {
+    width: 70%;
+    font-size: 3.5vw;
+    -webkit-text-decoration: underline 0.2vw;
+            text-decoration: underline 0.2vw;
+  }
+  .main .upperSide .user {
+    position: absolute;
+    bottom: 0.1vw;
+    font-size: 1.5vw;
+    display: flex;
+    width: 98%;
+    height: 3vw;
+    margin: auto;
+  }
+  .main .upperSide .user button {
+    margin-bottom: 0.5vw;
+    font-size: 1.1vw;
+    width: 7vw;
+    height: 2.2vw;
+    align-items: center;
+  }
+  .main .upperSide .loginBtn {
+    margin-bottom: 0.5vw;
+    font-size: 1.1vw;
+    position: absolute;
+    left: 2vw;
+    bottom: 0;
+    width: 7vw;
+    height: 2.2vw;
+    display: flex;
+    align-items: center;
+  }
+  .main .link {
+    height: 8.5vw;
+    font-size: 1.1vw;
+    width: 30%;
+    position: absolute;
+    right: 0;
+  }
+  .main .link li {
+    border: 0.3vw solid rgb(25, 167, 206);
+    border-radius: 40em;
+    padding: 0.5em 1em 0.3em;
+    width: 33.3%;
+    margin-right: 0.5vw;
+  }
+  .main .link li ::before {
+    border-radius: 40em;
+    left: 0.5vw;
+    top: 0.5vw;
+  }
 }/*# sourceMappingURL=header.module.css.map */

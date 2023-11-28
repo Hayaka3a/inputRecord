@@ -4,7 +4,7 @@
   width: 90%;
   height: 100%;
   margin: auto;
-  margin-top: 34vw;
+  margin-top: 30vw;
   background-color: white;
   border: 0.5vw dashed gray;
   text-align: center;
@@ -25,6 +25,7 @@
   textarea,
   input:nth-child(1) {
     width: 90%;
+    padding-top: 0;
   }
 
   .upper {
@@ -45,7 +46,7 @@
         margin-left: 0;
         margin-top: 0;
         select {
-          width: 13vh;
+          width: 15vh;
           text-align: center;
         }
       }
@@ -61,9 +62,12 @@
     padding-top: 0;
     div {
       text-align: left;
+      width: 30%;
     }
     textarea {
       height: 30vw;
+      padding: 1vw;
+      font-size: 4vw;
     }
   }
 
@@ -79,5 +83,61 @@
     border-radius: 40em;
     background-color: cl.$bl;
     cursor: pointer;
+  }
+}
+
+// デスクトップ用
+@media screen and (min-width: 601px) {
+  .main {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    font-size: 1.5vw;
+    margin-top: 10vw;
+    border: 0.3vw dashed gray;
+
+    label {
+      margin: 1vw;
+      padding: 2vw;
+    }
+
+    input,
+    select,
+    textarea {
+      outline: 0.2vw solid cl.$bl;
+    }
+
+    textarea,
+    input:nth-child(1) {
+      width: 70%;
+    }
+
+    .upper {
+      label {
+        margin: auto;
+        &:nth-child(1) {
+          margin-right: 5vw;
+        }
+        &:nth-child(2) {
+          margin-left: 2vw;
+        }
+      }
+    }
+
+    label:nth-child(3) {
+      textarea {
+        height: 15vw;
+        padding: 0.4vw;
+        font-size: medium;
+      }
+    }
+
+    button {
+      width: 8vw;
+      margin: auto;
+      margin-bottom: 2vw;
+      font-size: 1.5vw;
+      border: 0.5vw solid cl.$bl;
+    }
   }
 }

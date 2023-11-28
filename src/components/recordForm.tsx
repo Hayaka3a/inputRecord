@@ -1,7 +1,8 @@
 "use client";
-import { supabase } from "@/supabase";
-import { ChangeEvent, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "@/styles/components/recordForm.module.scss";
+import getCookieUserID from "@/app/hooks/getCokkieData/getCookieUserID";
+import addLoginUserRecord from "@/app/hooks/fetchDB/addLoginUserRecord";
 
 export default function RecordForm() {
   const tmpData = [
@@ -15,23 +16,30 @@ export default function RecordForm() {
   const [date, setDate] = useState(new Date());
   const [category, setCategory] = useState("読書");
   const [memoOpen, setMemoOpen] = useState(false);
+  const [ID, setID] = useState(0);
 
-  const handleSubmit = async () => {
-    console.log("送信処理");
-    // const { error } = await supabase.from("record").insert({
-    //   userID: 1,
-    //   title: title,
-    //   memo: memo,
-    //   date: date,
-    //   category: category,
-    // });
-    // if (error) {
-    //   console.log("記録を追加できませんでした");
-    // } else {
-    // }
+  useEffect(() => {
+    getCookieUserID(setID);
+  }, []);
+
+  const recordData = {
+    userID: ID,
+    title: title,
+    memo: memo,
+    date: date,
+    category: category,
   };
 
-  const textfilter = tmpData.find((data) => {
+  const handleSubmit = async () => {
+    if (ID !== 0) {
+      addLoginUserRecord(recordData);
+    } else {
+      console.log("ゲストなので保存しません！！！！！");
+      // ローカルに保存する処理を追加
+    }
+  };
+
+  const categoryText = tmpData.find((data) => {
     return data.category === category;
   });
 
@@ -71,10 +79,10 @@ export default function RecordForm() {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
-        <p>{textfilter && textfilter.text}</p>
+        <p>{categoryText && categoryText.text}</p>
       </label>
       <label>
-        <div onClick={() => setMemoOpen(!memoOpen)}>▼メモ</div>
+        <div onClick={() => setMemoOpen(!memoOpen)}>▼メモ欄</div>
         {memoOpen && (
           <textarea
             onChange={(e) => setMemo(e.target.value)}
