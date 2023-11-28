@@ -20,6 +20,8 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(246, 241, 241);
   font-size: 5vw;
+  color: rgb(87, 87, 87);
+  width: 100%;
 }
 
 main {
