@@ -7,7 +7,7 @@
   margin: auto;
   margin-top: 30vw;
   background-color: white;
-  border: 0.5vw dashed cl.$bl;
+  border: 0.5vw solid cl.$bl;
   text-align: center;
 
   label {
@@ -16,6 +16,7 @@
     padding: 4vw;
 
     input {
+      width: 80%;
       outline: 0.5vw solid cl.$bl;
       color: gray;
       text-align: center;
@@ -33,7 +34,7 @@
     width: 30%;
     height: 9vw;
     margin: auto;
-    margin-bottom: 10vw;
+    margin-bottom: 15vw;
     text-align: center;
     color: cl.$wh;
     font-size: 4.5vw;
@@ -53,8 +54,9 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 2vw auto;
+    margin: 2vw;
     font-family: "Courier New", Courier, monospace;
+    font-size: 4vw;
   }
 }
 
@@ -66,7 +68,7 @@
     margin: auto;
     font-size: 1.4vw;
     margin-top: 10vw;
-    border: 0.3vw dashed cl.$bl;
+    border: 0.3vw solid cl.$bl;
 
     label {
       margin: 1vw;
