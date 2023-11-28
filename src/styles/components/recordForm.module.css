@@ -1,0 +1,122 @@
+.main {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 30vw;
+  background-color: white;
+  border: 0.5vw dashed gray;
+  text-align: center;
+}
+.main label {
+  display: block;
+  margin: 3vw;
+  padding: 4vw;
+}
+.main input,
+.main select,
+.main textarea {
+  outline: 0.5vw solid rgb(157, 194, 210);
+  color: gray;
+}
+.main textarea,
+.main input:nth-child(1) {
+  width: 90%;
+  padding-top: 0;
+}
+.main .upper {
+  display: flex;
+}
+.main .upper label {
+  margin: auto;
+}
+.main .upper label:nth-child(1) {
+  padding: auto 0;
+  margin-right: 0;
+  text-align: center;
+}
+.main .upper label:nth-child(1) input {
+  text-align: center;
+}
+.main .upper label:nth-child(2) {
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+.main .upper label:nth-child(2) select {
+  width: 15vh;
+  text-align: center;
+}
+.main label:nth-child(2) {
+  padding-bottom: 0;
+}
+.main label:nth-child(3) {
+  margin-top: 0;
+  padding-top: 0;
+}
+.main label:nth-child(3) div {
+  text-align: left;
+  width: 30%;
+}
+.main label:nth-child(3) textarea {
+  height: 30vw;
+  padding: 1vw;
+  font-size: 4vw;
+}
+.main button {
+  display: inline-block;
+  width: 30%;
+  margin: auto;
+  margin-bottom: 4vw;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 6vw;
+  border: 0.5vw solid rgb(157, 194, 210);
+  border-radius: 40em;
+  background-color: rgb(157, 194, 210);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 601px) {
+  .main {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    font-size: 1.5vw;
+    margin-top: 10vw;
+    border: 0.3vw dashed gray;
+  }
+  .main label {
+    margin: 1vw;
+    padding: 2vw;
+  }
+  .main input,
+  .main select,
+  .main textarea {
+    outline: 0.2vw solid rgb(157, 194, 210);
+  }
+  .main textarea,
+  .main input:nth-child(1) {
+    width: 70%;
+  }
+  .main .upper label {
+    margin: auto;
+  }
+  .main .upper label:nth-child(1) {
+    margin-right: 5vw;
+  }
+  .main .upper label:nth-child(2) {
+    margin-left: 2vw;
+  }
+  .main label:nth-child(3) textarea {
+    height: 15vw;
+    padding: 0.4vw;
+    font-size: medium;
+  }
+  .main button {
+    width: 8vw;
+    margin: auto;
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+    border: 0.5vw solid rgb(157, 194, 210);
+  }
+}/*# sourceMappingURL=recordForm.module.css.map */

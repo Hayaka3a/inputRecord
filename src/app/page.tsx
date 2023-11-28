@@ -4,11 +4,9 @@ import RecordForm from "@/components/recordForm";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Header />
-      <main>
-        <RecordForm />
-      </main>
-    </>
+      <RecordForm />
+    </main>
   );
 }
