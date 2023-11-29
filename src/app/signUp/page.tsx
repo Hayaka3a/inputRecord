@@ -2,21 +2,21 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import addUser from "./addUser";
-import emailCheck from "./emailCheck";
+import loginIDCheck from "./loginIDCheck";
 import pwCheck from "./pwCheck";
 import Header from "@/components/header";
 import styles from "@/styles/app/signUp.module.scss";
 import getUserData from "../hooks/fetchDB/getUserData";
 
 export default function signUp() {
-  const [email, setEmail] = useState("");
+  const [loginID, setloginID] = useState("");
   const [pw, setPw] = useState("");
   const [conPw, setConPw] = useState("");
   const [name, setName] = useState("");
-  const [emailError, setEmailError] = useState("");
+  const [loginIDError, setloginIDError] = useState("");
   const [passError, setPassError] = useState("");
 
-  const sendData = { email: email, pw: pw, userName: name, status: false };
+  const sendData = { loginID: loginID, pw: pw, userName: name, status: false };
 
   const router = useRouter();
 
@@ -26,7 +26,7 @@ export default function signUp() {
       if (res?.status === "ok") {
         console.log("ok!");
 
-        const cookieSetUser = await getUserData(email);
+        const cookieSetUser = await getUserData(loginID);
         if (cookieSetUser) {
           document.cookie = `userName=${cookieSetUser.userName}`;
           document.cookie = `userID=${cookieSetUser.id}`;
@@ -41,68 +41,65 @@ export default function signUp() {
   };
 
   return (
-    <>
-      <Header />
-      <main className={styles.main}>
-        <h1>新規登録</h1>
-        <form>
-          <label>
-            ニックネーム
-            <br />
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <br />
-          </label>
-          <label>
-            メールアドレス
-            <br />
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onBlur={() => {
-                emailCheck(email, setEmailError);
-              }}
-            />
-            <br />
-          </label>
-          {emailError ? <p className={styles.error}>{emailError}</p> : <></>}
-          <label>
-            パスワード
-            <br />
-            <input
-              type="password"
-              value={pw}
-              onChange={(e) => setPw(e.target.value)}
-            />
-            <br />
-          </label>
-          <label>
-            確認用パスワード
-            <br />
-            <input
-              type="password"
-              value={conPw}
-              onChange={(e) => setConPw(e.target.value)}
-              onBlur={() => pwCheck(pw, conPw, setPassError)}
-            />
-            <br />
-          </label>
-          {passError ? <p className={styles.error}>{passError}</p> : <></>}
-        </form>
-        <button
-          type="button"
-          onClick={handleSubmit}
-          disabled={
-            !name || !email || !pw || !conPw || !!emailError || !!passError
-          }
-        >
-          登録
-        </button>
-      </main>
-    </>
+    <main className={styles.main}>
+      <h1>新規登録</h1>
+      <form>
+        <label>
+          ニックネーム
+          <br />
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <br />
+        </label>
+        <label>
+          ログインID
+          <br />
+          <input
+            type="loginID"
+            value={loginID}
+            onChange={(e) => setloginID(e.target.value)}
+            onBlur={() => {
+              loginIDCheck(loginID, setloginIDError);
+            }}
+          />
+          <br />
+        </label>
+        {loginIDError ? <p className={styles.error}>{loginIDError}</p> : <></>}
+        <label>
+          パスワード
+          <br />
+          <input
+            type="password"
+            value={pw}
+            onChange={(e) => setPw(e.target.value)}
+          />
+          <br />
+        </label>
+        <label>
+          確認用パスワード
+          <br />
+          <input
+            type="password"
+            value={conPw}
+            onChange={(e) => setConPw(e.target.value)}
+            onBlur={() => pwCheck(pw, conPw, setPassError)}
+          />
+          <br />
+        </label>
+        {passError ? <p className={styles.error}>{passError}</p> : <></>}
+      </form>
+      <button
+        type="button"
+        onClick={handleSubmit}
+        disabled={
+          !name || !loginID || !pw || !conPw || !!loginIDError || !!passError
+        }
+      >
+        登録
+      </button>
+    </main>
   );
 }

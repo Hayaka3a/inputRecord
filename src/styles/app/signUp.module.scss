@@ -6,7 +6,8 @@
   margin: 30vw auto;
   margin-top: 30vw;
   background-color: white;
-  border: 0.5vw solid rgb(143, 128, 52);
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 
   h1 {
@@ -24,6 +25,7 @@
       outline: 0.5vw solid cl.$bl;
       color: gray;
       text-align: center;
+      width: 90%;
     }
   }
   :nth-child(1) {
@@ -45,6 +47,7 @@
       padding: 1.9vw 3.1vw;
       background-color: rgb(169, 169, 169);
       border: rgb(159, 155, 155);
+      color: gainsboro;
       cursor: default;
     }
   }
@@ -64,7 +67,8 @@
     margin: 2vw auto;
     font-size: 1.5vw;
     margin-top: 10vw;
-    border: 0.3vw solid rgb(143, 128, 52);
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
 
     h1 {
       color: gray;
@@ -81,7 +85,7 @@
       font-size: 1.3vw;
 
       input {
-        outline: 0.2vw solid cl.$bl;
+        outline: 0.1vw solid cl.$bl;
         width: 45%;
         height: 2vw;
       }
@@ -98,8 +102,6 @@
 
       &:disabled {
         padding: 0.5vw 0.9vw;
-        background-color: rgb(169, 169, 169);
-        border: rgb(159, 155, 155);
       }
     }
 

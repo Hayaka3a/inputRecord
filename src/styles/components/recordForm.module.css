@@ -4,7 +4,8 @@
   margin: auto;
   margin-top: 30vw;
   background-color: white;
-  border: 0.5vw solid gray;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 .main label {
@@ -15,7 +16,7 @@
 .main input,
 .main select,
 .main textarea {
-  outline: 0.5vw solid rgb(157, 194, 210);
+  outline: 0.5vw solid rgb(140, 175, 189);
   color: gray;
 }
 .main textarea,
@@ -43,7 +44,7 @@
   margin-top: 0;
 }
 .main .upper label:nth-child(2) select {
-  width: 15vh;
+  width: 100%;
   text-align: center;
 }
 .main label:nth-child(2) {
@@ -70,10 +71,13 @@
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 6vw;
-  border: 0.5vw solid rgb(157, 194, 210);
+  border: 0.5vw solid rgb(140, 175, 189);
   border-radius: 40em;
-  background-color: rgb(157, 194, 210);
+  background-color: rgb(140, 175, 189);
   cursor: pointer;
+}
+.main button :disabled {
+  cursor: default;
 }
 
 @media screen and (min-width: 601px) {
@@ -83,7 +87,8 @@
     margin: auto;
     font-size: 1.5vw;
     margin-top: 10vw;
-    border: 0.3vw solid gray;
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
   }
   .main label {
     margin: 1vw;
@@ -92,11 +97,14 @@
   .main input,
   .main select,
   .main textarea {
-    outline: 0.2vw solid rgb(157, 194, 210);
+    outline: 0.1vw solid rgb(140, 175, 189);
   }
   .main textarea,
   .main input:nth-child(1) {
     width: 70%;
+  }
+  .main input:nth-child(1) {
+    padding: 0.3vw;
   }
   .main .upper label {
     margin: auto;
@@ -117,6 +125,6 @@
     margin: auto;
     margin-bottom: 2vw;
     font-size: 1.5vw;
-    border: 0.5vw solid rgb(157, 194, 210);
+    border: 0.5vw solid rgb(140, 175, 189);
   }
 }/*# sourceMappingURL=recordForm.module.css.map */

@@ -1,7 +1,7 @@
 import { supabase } from "@/supabase";
 
 export default async function addUser(sendData: {
-  email: string;
+  loginID: string;
   pw: string;
   userName: string;
   status: boolean;

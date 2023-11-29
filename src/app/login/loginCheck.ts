@@ -1,13 +1,12 @@
 import { supabase } from "@/supabase";
 import { Dispatch, SetStateAction } from "react";
-import { FALSE } from "sass";
 
 export default async function loginCheck({
-  email,
+  loginID,
   pw,
   setError,
 }: {
-  email: string;
+  loginID: string;
   pw: string;
   setError: Dispatch<SetStateAction<boolean>>;
 }) {
@@ -15,7 +14,7 @@ export default async function loginCheck({
     const { data } = await supabase
       .from("users")
       .select("userName,id")
-      .eq("email", email)
+      .eq("loginID", loginID)
       .eq("pw", pw)
       .eq("status", false);
 
@@ -23,7 +22,7 @@ export default async function loginCheck({
       return { status: "ok", userName: data[0].userName, id: data[0].id };
     } else {
       setError(true);
-      return { status: "error", message: "Invalid email or password." };
+      return { status: "error", message: "Invalid loginID or password." };
     }
   } catch (error) {
     setError(true);

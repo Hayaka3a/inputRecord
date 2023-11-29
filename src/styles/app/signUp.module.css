@@ -5,7 +5,8 @@
   margin: 30vw auto;
   margin-top: 30vw;
   background-color: white;
-  border: 0.5vw solid rgb(143, 128, 52);
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 .main h1 {
@@ -19,9 +20,10 @@
   padding-bottom: 0.5vw;
 }
 .main label input {
-  outline: 0.5vw solid rgb(157, 194, 210);
+  outline: 0.5vw solid rgb(140, 175, 189);
   color: gray;
   text-align: center;
+  width: 90%;
 }
 .main :nth-child(1) {
   padding-top: 0;
@@ -29,8 +31,8 @@
 .main button {
   margin: 2vw;
   margin-bottom: 4vw;
-  border: 0.3vw solid rgb(157, 194, 210);
-  background-color: rgb(157, 194, 210);
+  border: 0.3vw solid rgb(140, 175, 189);
+  background-color: rgb(140, 175, 189);
   border-radius: 40em;
   padding: 1.8vw 3vw;
   color: white;
@@ -41,6 +43,7 @@
   padding: 1.9vw 3.1vw;
   background-color: rgb(169, 169, 169);
   border: rgb(159, 155, 155);
+  color: gainsboro;
   cursor: default;
 }
 .main .error {
@@ -56,7 +59,8 @@
     margin: 2vw auto;
     font-size: 1.5vw;
     margin-top: 10vw;
-    border: 0.3vw solid rgb(143, 128, 52);
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
   }
   .main h1 {
     color: gray;
@@ -72,7 +76,7 @@
     font-size: 1.3vw;
   }
   .main label input {
-    outline: 0.2vw solid rgb(157, 194, 210);
+    outline: 0.1vw solid rgb(140, 175, 189);
     width: 45%;
     height: 2vw;
   }
@@ -83,12 +87,10 @@
     padding: 0.1vw 0.5vw;
     margin: 2vw auto;
     font-size: 1.4vw;
-    border: 0.5vw solid rgb(157, 194, 210);
+    border: 0.5vw solid rgb(140, 175, 189);
   }
   .main button:disabled {
     padding: 0.5vw 0.9vw;
-    background-color: rgb(169, 169, 169);
-    border: rgb(159, 155, 155);
   }
   .main .error {
     color: rgb(150, 75, 75);

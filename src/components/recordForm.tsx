@@ -3,23 +3,21 @@ import { useEffect, useState } from "react";
 import styles from "@/styles/components/recordForm.module.scss";
 import getCookieUserID from "@/app/hooks/getCokkieData/getCookieUserID";
 import addLoginUserRecord from "@/app/hooks/fetchDB/addLoginUserRecord";
+import getCategory from "@/app/hooks/fetchDB/getCategory";
+import { Category } from "@/type";
 
 export default function RecordForm() {
-  const tmpData = [
-    { id: 1, category: "読書", text: "を読みました" },
-    { id: 2, category: "映画", text: "を観ました" },
-    { id: 3, category: "学習", text: "を学習しました" },
-  ];
-
   const [title, setTitle] = useState("");
   const [memo, setMemo] = useState("");
   const [date, setDate] = useState(new Date());
-  const [category, setCategory] = useState("読書");
+  const [selectCategory, setSelectCategory] = useState("読書");
   const [memoOpen, setMemoOpen] = useState(false);
   const [ID, setID] = useState(0);
+  const [categoryList, setCategoryList] = useState<Category>([]);
 
   useEffect(() => {
     getCookieUserID(setID);
+    getCategory(setCategoryList);
   }, []);
 
   const recordData = {
@@ -27,10 +25,10 @@ export default function RecordForm() {
     title: title,
     memo: memo,
     date: date,
-    category: category,
+    category: selectCategory,
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (ID !== 0) {
       addLoginUserRecord(recordData);
     } else {
@@ -39,8 +37,8 @@ export default function RecordForm() {
     }
   };
 
-  const categoryText = tmpData.find((data) => {
-    return data.category === category;
+  const categoryText = categoryList?.find((data) => {
+    return data.category === selectCategory;
   });
 
   return (
@@ -60,10 +58,10 @@ export default function RecordForm() {
           <br />
           <select
             name="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            value={selectCategory}
+            onChange={(e) => setSelectCategory(e.target.value)}
           >
-            {tmpData.map((data) => {
+            {categoryList?.map((data) => {
               return (
                 <option value={data.category} key={data.id}>
                   {data.category}
@@ -91,7 +89,9 @@ export default function RecordForm() {
           />
         )}
       </label>
-      <button type="submit">記録</button>
+      <button type="submit" disabled={!title}>
+        記録
+      </button>
     </form>
   );
 }

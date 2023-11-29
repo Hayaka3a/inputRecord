@@ -2,36 +2,38 @@
 
 .main {
   width: 100%;
-  height: 26vw;
+  height: 23vw;
   background-color: cl.$nv;
   color: cl.$wh;
   position: fixed;
   top: 0;
   text-align: center;
+  z-index: 100;
 
   & .upperSide {
     display: flex;
     height: 12vw;
 
     h1 {
-      width: 53%;
+      width: 65%;
       color: cl.$light;
       bottom: 0;
       font-size: 7vw;
       text-decoration: underline 0.5vw;
-      text-decoration-color: cl.$wh;
+      font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans",
+        "ヒラギノ角ゴシック";
     }
 
     & .user {
       display: flex;
       position: absolute;
       right: 0;
-      margin-top: 4vw;
+      margin-top: 2vw;
       margin-right: 2vw;
 
       & button {
-        border: 0.3vw solid rgb(164, 151, 83);
-        background-color: rgb(164, 151, 83);
+        border: 0.3vw solid cl.$yw;
+        background-color: cl.$yw;
         border-radius: 40em;
         margin-bottom: 0.2vw;
         margin-left: 1vw;
@@ -111,7 +113,7 @@
 // デスクトップ用
 @media screen and (min-width: 590px) {
   .main {
-    height: 8.5vw;
+    height: 6.5vw;
     font-size: 2vh;
     font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans",
       "ヒラギノ角ゴシック";
@@ -123,17 +125,18 @@
       height: 100%;
       display: flex;
       h1 {
-        width: 70%;
-        font-size: 3.5vw;
+        width: 41%;
+        height: 3vw;
+        font-size: 1.8vw;
         text-decoration: underline 0.2vw;
       }
 
       & .user {
         position: absolute;
         bottom: 0.1vw;
-        font-size: 1.5vw;
+        font-size: 1.3vw;
         display: flex;
-        width: 98%;
+        width: 99%;
         height: 3vw;
         margin: auto;
 
@@ -161,22 +164,23 @@
 
     .link {
       height: 8.5vw;
-      font-size: 1.1vw;
+      font-size: 1vw;
       width: 30%;
       position: absolute;
       right: 0;
 
       & li {
-        border: 0.3vw solid cl.$deepbl;
+        border: 0.2vw solid cl.$deepbl;
         border-radius: 40em;
         padding: 0.5em 1em 0.3em;
         width: 33.3%;
-        margin-right: 0.5vw;
+        margin-right: 1vw;
+        margin-bottom: 1vw;
 
         ::before {
           border-radius: 40em;
           left: 0.5vw;
-          top: 0.5vw;
+          top: 0.4vw;
         }
       }
     }
