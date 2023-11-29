@@ -1,0 +1,139 @@
+.main {
+  position: relative;
+  text-align: center;
+  width: 95%;
+  height: 100%;
+  margin: 30vw auto;
+  margin-top: 25vw;
+  padding: 5vw;
+  background-color: white;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.main h1 {
+  color: gray;
+}
+.main .select {
+  margin: 5vw auto;
+  font-size: 4.5vw;
+}
+.main .select label {
+  display: inline-block;
+}
+.main .select select {
+  outline: 0.5vw solid rgba(0, 0, 0, 0.26);
+  border-radius: 20rem;
+  text-align: center;
+}
+.main .select :nth-child(1) {
+  margin-bottom: 2vw;
+}
+.main .item {
+  margin-bottom: 7vw;
+}
+.main .item .text .date {
+  display: flex;
+}
+.main .item .text .date button {
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  background-color: rgb(164, 151, 83);
+  color: white;
+  width: 11%;
+  text-align: center;
+  border-radius: 10%;
+  font-family: sans-serif;
+  font-size: 3vw;
+}
+.main .item .text p {
+  background: linear-gradient(transparent 60%, rgba(165, 122, 205, 0.313) 60%);
+  width: 34%;
+  margin-bottom: 1vw;
+}
+.main .item .text :nth-child(2) {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 1vw;
+  margin-top: 3vw;
+  text-align: left;
+}
+.main .item .text span {
+  color: rgb(149, 143, 158);
+  text-decoration: underline;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 1vw;
+  cursor: pointer;
+}
+.main .item .memo {
+  width: 95%;
+  text-align: left;
+  margin: 2.5vw auto;
+  font-size: medium;
+}
+
+@media screen and (min-width: 601px) {
+  .main {
+    width: 60%;
+    height: 100%;
+    margin: 2vw auto;
+    font-size: 1.3vw;
+    margin-top: 7vw;
+    padding: 2vw 4vw;
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+  }
+  .main h1 {
+    color: gray;
+    text-decoration-line: underline;
+    font-size: 2vw;
+    margin-top: 1vw;
+  }
+  .main .select {
+    margin: 2vw auto;
+    display: inline-block;
+    font-size: 1.4vw;
+    height: 3vw;
+    width: 80%;
+  }
+  .main .select select {
+    width: 50%;
+    outline: 0.1vw solid rgba(0, 0, 0, 0.26);
+    border-radius: 20rem;
+  }
+  .main .select label {
+    width: 50%;
+  }
+  .main .item {
+    margin-bottom: 3vw;
+  }
+  .main .item .text .date {
+    display: flex;
+  }
+  .main .item .text .date button {
+    margin: auto 0;
+    margin-bottom: 0;
+    width: 14%;
+    border-radius: 16%;
+    font-size: smaller;
+  }
+  .main .item .text :nth-child(1) {
+    width: 46%;
+    height: 2vw;
+    margin: 0 1.1vw 0 0;
+  }
+  .main .item .text :nth-child(2) {
+    margin-top: 2vw;
+  }
+  .main .item .text :nth-child(4) {
+    text-align: left;
+  }
+  .main .item .memo {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 1vw;
+    text-align: left;
+    font-size: 1.2vw;
+  }
+}/*# sourceMappingURL=myrecord.module.css.map */

@@ -28,3 +28,9 @@ main {
   font-family: "Zen Kurenaido", "HiraginoSans-W0", "Hiragino Sans",
     "ヒラギノ角ゴシック";
 }
+
+@media screen and (min-width: 601px) {
+  body {
+    font-size: 1.4vw;
+  }
+}

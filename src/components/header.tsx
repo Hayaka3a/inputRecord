@@ -15,8 +15,9 @@ export default function Header() {
     <>
       <div className={styles.main}>
         <div className={styles.upperSide}>
-          <h1>なんでもきろく</h1>
-
+          <h1>
+            <Link href={"/"}>インプットきろく</Link>
+          </h1>
           {userName ? (
             <div className={styles.user}>
               <Link href={"/"}>
