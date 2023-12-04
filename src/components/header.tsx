@@ -7,6 +7,7 @@ import logout from "@/app/hooks/logout";
 
 export default function Header() {
   const [userName, setUserName] = useState("");
+
   useEffect(() => {
     getCookieUserName(setUserName);
   }, []);

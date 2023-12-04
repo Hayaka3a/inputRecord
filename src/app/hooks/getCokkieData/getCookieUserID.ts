@@ -14,8 +14,13 @@ export default function getCookieUserID(
     if (strID) {
       const userID = Number(strID[1]);
       setUserID(userID);
+      return userID;
     }
   } else {
     setUserID(0);
+    return 0;
+  }
+  if (!cookie) {
+    return 0;
   }
 }

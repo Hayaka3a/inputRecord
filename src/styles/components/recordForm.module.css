@@ -21,7 +21,7 @@
 }
 .main textarea,
 .main input:nth-child(1) {
-  width: 90%;
+  width: 100%;
   padding-top: 0;
 }
 .main .upper {
@@ -76,8 +76,17 @@
   background-color: rgb(140, 175, 189);
   cursor: pointer;
 }
-.main button :disabled {
+.main button:disabled {
   cursor: default;
+  background-color: rgb(169, 169, 169);
+  border: rgb(159, 155, 155);
+  color: gainsboro;
+  height: 9.7vw;
+}
+.main .error {
+  width: 100%;
+  color: rgb(150, 75, 75);
+  font-size: medium;
 }
 
 @media screen and (min-width: 601px) {
@@ -126,5 +135,8 @@
     margin-bottom: 2vw;
     font-size: 1.5vw;
     border: 0.5vw solid rgb(140, 175, 189);
+  }
+  .main button:disabled {
+    height: 3.2vw;
   }
 }/*# sourceMappingURL=recordForm.module.css.map */

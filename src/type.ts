@@ -6,6 +6,20 @@ type Category = {
 
 type User = { userName: string };
 
+type RecordList = {
+  id: number;
+  userID: number;
+  title: string;
+  category: string;
+  memo: string;
+  date: Date;
+  yearMonth: string;
+  create_at: Date;
+  status: boolean;
+  users: User;
+  categories: { text: string; allText: string; category: string };
+}[];
+
 type Record = {
   id: number;
   userID: number;
@@ -16,8 +30,8 @@ type Record = {
   yearMonth: string;
   create_at: Date;
   status: boolean;
-  user: User;
-  categories: { text: string };
-}[];
+  users: User;
+  categories: { text: string; allText: string; category: string };
+};
 
-export type { Category, Record };
+export type { Category, RecordList, Record };

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "@/styles/components/recordForm.module.scss";
 import getCookieUserID from "@/app/hooks/getCokkieData/getCookieUserID";
-import addLoginUserRecord from "@/app/hooks/fetchDB/addLoginUserRecord";
+import addRecord from "@/app/hooks/fetchDB/addRecord";
 import getCategory from "@/app/hooks/fetchDB/getCategory";
 import { Category } from "@/type";
 
@@ -26,11 +26,12 @@ export default function RecordForm() {
     memo: memo,
     date: date,
     category: selectCategory,
+    yearMonth: "",
   };
 
   const handleSubmit = () => {
     if (ID !== 0) {
-      addLoginUserRecord(recordData);
+      addRecord(recordData);
     } else {
       console.log("ゲストなので保存しません！！！！！");
       // ローカルに保存する処理を追加
@@ -89,7 +90,8 @@ export default function RecordForm() {
           />
         )}
       </label>
-      <button type="submit" disabled={!title}>
+      {ID === 0 && <p className={styles.error}>ログインしてください。</p>}
+      <button type="submit" disabled={!title || ID === 0 || ID === undefined}>
         記録
       </button>
     </form>

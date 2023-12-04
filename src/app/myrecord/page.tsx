@@ -1,20 +1,20 @@
 "use client";
-import { Category, Record } from "@/type";
+import { Category, RecordList } from "@/type";
 import { useEffect, useState } from "react";
 import styles from "@/styles/app/myrecord.module.css";
 import getMyRecord from "../hooks/fetchDB/getMyRecord";
 import getCookieUserID from "../hooks/getCokkieData/getCookieUserID";
 import getCategory from "../hooks/fetchDB/getCategory";
 import Selector from "./selector";
-import RecordList from "./recordList";
+import RecordListCom from "./recordList";
 import createYearMonthsList from "./createYearMonthsList";
 
 export default function myRecord() {
-  const [recordData, setRecordData] = useState<Record>([]);
+  const [recordData, setRecordData] = useState<RecordList>([]);
   const [userID, setUserID] = useState(0);
   const [categoryList, setCategoryList] = useState<Category>([]);
   const [selectCategory, setSelectCategory] = useState("all");
-  const [memoOpen, setMemoOpen] = useState<{ [key: number]: boolean }>({});
+
   const [selectYearMonth, setSelectYearMonth] = useState("all");
   const [yearMonthsList, setYearMonthsList] = useState([""]);
 
@@ -57,11 +57,9 @@ export default function myRecord() {
         setSelectYearMonth={setSelectYearMonth}
         YearMonthsList={yearMonthsList}
       />
-      <RecordList
+      <RecordListCom
         recordData={recordData}
         selectCategory={selectCategory}
-        memoOpen={memoOpen}
-        setMemoOpen={setMemoOpen}
         selectYearMonth={selectYearMonth}
       />
     </main>

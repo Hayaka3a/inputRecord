@@ -1,0 +1,74 @@
+@use "../color" as cl;
+
+.main {
+  position: relative;
+  text-align: center;
+  width: 95%;
+  height: 100%;
+  margin: 30vw auto;
+  margin-top: 25vw;
+  padding: 5vw;
+  background-color: white;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h1 {
+    color: gray;
+  }
+
+  .list {
+    margin: 6vw auto;
+    width: 100%;
+    .item {
+      width: 100%;
+      padding: 2vw;
+      margin-bottom: 3vw;
+      border: 0.1vw solid #e8e8e8;
+
+      span {
+        color: cl.$yw;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 1vw;
+      }
+    }
+  }
+}
+
+//デスクトップ
+@media screen and (min-width: 601px) {
+  .main {
+    width: 60%;
+    height: 100%;
+    margin: 2vw auto;
+    font-size: 1.3vw;
+    margin-top: 7vw;
+    padding: 2vw 4vw;
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      color: gray;
+      text-decoration-line: underline;
+      font-size: 2vw;
+      margin-top: 1vw;
+    }
+
+    .list {
+      margin: 2vw auto;
+
+      .item {
+        font-size: 1.3vw;
+        padding: 1vw;
+        margin-bottom: 1vw;
+        border: 0.15vw solid #e8e8e8;
+
+        span {
+          color: cl.$yw;
+          margin-bottom: 1vw;
+        }
+      }
+    }
+  }
+}

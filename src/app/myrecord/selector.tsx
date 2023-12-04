@@ -1,6 +1,6 @@
 "use client";
 import styles from "@/styles/app/myrecord.module.css";
-import { Category, Record } from "@/type";
+import { Category } from "@/type";
 import { Dispatch, SetStateAction } from "react";
 
 export default function Selector({
