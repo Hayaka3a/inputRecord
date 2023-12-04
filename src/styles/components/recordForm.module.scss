@@ -25,7 +25,7 @@
 
   textarea,
   input:nth-child(1) {
-    width: 90%;
+    width: 100%;
     padding-top: 0;
   }
 
@@ -85,9 +85,19 @@
     background-color: cl.$bl;
     cursor: pointer;
 
-    :disabled {
+    &:disabled {
       cursor: default;
+      background-color: rgb(169, 169, 169);
+      border: rgb(159, 155, 155);
+      color: gainsboro;
+      height: 9.7vw;
     }
+  }
+
+  .error {
+    width: 100%;
+    color: rgb(150, 75, 75);
+    font-size: medium;
   }
 }
 
@@ -147,6 +157,10 @@
       margin-bottom: 2vw;
       font-size: 1.5vw;
       border: 0.5vw solid cl.$bl;
+
+      &:disabled {
+        height: 3.2vw;
+      }
     }
   }
 }

@@ -6,8 +6,8 @@ import Header from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "なんでもインプット記録",
-  description: "観たもの、読んだもの、勉強したことなどなんでも記録できます。",
+  title: "インプット記録",
+  description: "観たもの、読んだもの、勉強したことなど記録できます。",
 };
 
 export default function RootLayout({

@@ -1,23 +1,26 @@
+"use client";
 import styles from "@/styles/app/myrecord.module.css";
-import { Record } from "@/type";
-import { Dispatch, SetStateAction } from "react";
-export default function RecordList({
+import { RecordList } from "@/type";
+import { useState } from "react";
+import RecordEdit from "./edit";
+export default function RecordListCom({
   recordData,
   selectCategory,
-  memoOpen,
-  setMemoOpen,
   selectYearMonth,
 }: {
-  recordData: Record;
+  recordData: RecordList;
   selectCategory: string;
-  memoOpen: { [key: number]: boolean };
-  setMemoOpen: Dispatch<
-    SetStateAction<{
-      [key: number]: boolean;
-    }>
-  >;
   selectYearMonth: string;
 }) {
+  const [editOpen, setEditOpen] = useState<{ [key: number]: boolean }>({});
+  const toggleEdit = (index: number) => {
+    setEditOpen((prev) => ({
+      ...prev,
+      [index]: !prev[index] || false,
+    }));
+  };
+
+  const [memoOpen, setMemoOpen] = useState<{ [key: number]: boolean }>({});
   const toggleMemo = (index: number) => {
     setMemoOpen((prevMemoOpen) => ({
       ...prevMemoOpen,
@@ -45,7 +48,7 @@ export default function RecordList({
                 <div className={styles.text}>
                   <div className={styles.date}>
                     <p>{String(data.date)}</p>
-                    <button>編集</button>
+                    <button onClick={() => toggleEdit(index)}>編集</button>
                   </div>
                   <div>
                     <span onClick={() => toggleMemo(index)}>{data.title}</span>
@@ -59,6 +62,13 @@ export default function RecordList({
                 )}
                 {memoOpen[index] && !data.memo && (
                   <p className={styles.memo}>メモはありません。</p>
+                )}
+                {editOpen[index] && (
+                  <RecordEdit
+                    data={data}
+                    toggleEdit={toggleEdit}
+                    index={index}
+                  />
                 )}
               </div>
             );
