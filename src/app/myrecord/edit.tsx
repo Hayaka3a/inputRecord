@@ -1,7 +1,7 @@
 "use client";
 import styles from "@/styles/app/myrecord.module.css";
 import { Category, Record } from "@/type";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import getCategory from "../hooks/fetchDB/getCategory";
 import updateRecord from "../hooks/fetchDB/updateRecord";
 

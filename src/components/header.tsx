@@ -21,7 +21,7 @@ export default function Header() {
           </h1>
           {userName ? (
             <div className={styles.user}>
-              <Link href={"/"}>
+              <Link href={"mypage"}>
                 <p>{userName}さん </p>
               </Link>
               <button onClick={logout}>ログアウト</button>

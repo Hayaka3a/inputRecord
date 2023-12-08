@@ -4,7 +4,6 @@ import { useState } from "react";
 import addUser from "./addUser";
 import loginIDCheck from "./loginIDCheck";
 import pwCheck from "./pwCheck";
-import Header from "@/components/header";
 import styles from "@/styles/app/signUp.module.scss";
 import getUserData from "../hooks/fetchDB/getUserData";
 
@@ -26,11 +25,11 @@ export default function signUp() {
       if (res?.status === "ok") {
         console.log("ok!");
 
-        const cookieSetUser = await getUserData(loginID);
+        const cookieSetUser = await getUserData(undefined, loginID);
         if (cookieSetUser) {
           document.cookie = `userName=${cookieSetUser.userName}`;
           document.cookie = `userID=${cookieSetUser.id}`;
-          router.push("/");
+          window.location.replace("/");
         }
       } else if (res?.status === "error") {
         console.log("addUser error!");

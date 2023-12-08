@@ -17,7 +17,7 @@ export default function Login() {
 
   const loggedInReplace = () => {
     const user = getCookieUserID(setUserID);
-    if (user === 0 || undefined) {
+    if (user !== "" || undefined) {
       return undefined;
     } else {
       window.location.replace("/");
@@ -29,7 +29,7 @@ export default function Login() {
 
     if (loginUser && loginUser.status === "ok") {
       document.cookie = `userName=${loginUser.userName}`;
-      document.cookie = `userID=${loginUser.id}`;
+      document.cookie = `userID=${loginUser.userID}`;
 
       event.preventDefault();
       window.location.replace("/");
