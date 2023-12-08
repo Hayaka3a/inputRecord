@@ -4,7 +4,7 @@ type Category = {
   text: string;
 }[];
 
-type User = { userName: string };
+type User = { id: number; userName: string; loginID: string; pw: string };
 
 type RecordList = {
   id: number;
@@ -34,4 +34,4 @@ type Record = {
   categories: { text: string; allText: string; category: string };
 };
 
-export type { Category, RecordList, Record };
+export type { Category, RecordList, Record, User };

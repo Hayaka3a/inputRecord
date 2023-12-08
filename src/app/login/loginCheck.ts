@@ -19,10 +19,14 @@ export default async function loginCheck({
       .eq("status", false);
 
     if (data && data.length > 0) {
-      return { status: "ok", userName: data[0].userName, id: data[0].id };
+      return {
+        status: "ok",
+        userName: data[0].userName,
+        userID: data[0].id,
+      };
     } else {
       setError(true);
-      return { status: "error", message: "Invalid loginID or password." };
+      return { status: "error", message: "Invalid userID or password." };
     }
   } catch (error) {
     setError(true);

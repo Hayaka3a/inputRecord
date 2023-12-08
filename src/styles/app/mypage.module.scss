@@ -1,0 +1,263 @@
+@use "../color" as cl;
+
+.main {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 27vw;
+  background-color: white;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+
+  .contents {
+    margin: 16% auto;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+
+    a {
+      height: auto;
+      width: 100%;
+      margin: auto;
+      text-decoration: underline;
+    }
+  }
+
+  //quitとuserEdit共通
+  .overlay {
+    z-index: 10;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 78vw;
+    width: 100%;
+    background-color: white;
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+
+    .returnBtn {
+      width: 19%;
+      height: 6vw;
+      position: absolute;
+      left: 0;
+      font-size: smaller;
+    }
+    p {
+      width: 100%;
+      color: gray;
+      text-decoration-line: underline;
+      font-size: 5vw;
+    }
+  }
+
+  //userEdit
+  form {
+    height: 75%;
+
+    label {
+      display: block;
+      margin: 3vw;
+      padding: 4vw;
+      padding-bottom: 0.5vw;
+      font-size: medium;
+
+      input {
+        outline: 0.5vw solid cl.$bl;
+        color: gray;
+        text-align: center;
+        width: 90%;
+      }
+    }
+    :nth-child(1) {
+      padding-top: 0;
+    }
+    .error {
+      width: 100%;
+      color: rgb(150, 75, 75);
+      font-size: 4vw;
+    }
+  }
+  .submitBtn {
+    margin: 2vw;
+    margin-bottom: 4vw;
+    border: 0.3vw solid cl.$bl;
+    background-color: cl.$bl;
+    border-radius: 40em;
+    padding: 1.8vw 3vw;
+    color: white;
+    font-size: 4vw;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    bottom: 4%;
+
+    &:disabled {
+      padding: 1.9vw 3.1vw;
+      background-color: rgb(169, 169, 169);
+      border: rgb(159, 155, 155);
+      color: gainsboro;
+      cursor: default;
+    }
+  }
+
+  //quitコンポーネント
+  .form {
+    font-size: medium;
+    height: 66vw;
+
+    p {
+      text-decoration: none;
+      color: rgb(66, 65, 65);
+      margin: 7vw auto;
+    }
+    input {
+      outline: 0.5vw solid cl.$bl;
+      color: gray;
+      text-align: center;
+      width: 70%;
+      display: block;
+      margin: auto;
+    }
+    .submitBtn {
+      margin-top: 7vw;
+    }
+    .error {
+      width: 100%;
+      color: rgb(150, 75, 75);
+      font-size: 4vw;
+      margin: 1vw;
+    }
+  }
+}
+
+// デスクトップ用
+@media screen and (min-width: 601px) {
+  .main {
+    width: 50%;
+    height: 30vw;
+    margin: auto;
+    font-size: 1.5vw;
+    margin-top: 10vw;
+    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+
+    .contents {
+      margin: auto;
+      margin-top: 16%;
+      height: 41%;
+      width: 27%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+
+      a {
+        height: auto;
+        width: 100%;
+        margin: auto;
+      }
+    }
+
+    //quitとuserEdit共通
+    .overlay {
+      z-index: 10;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 30vw;
+      width: 100%;
+      background-color: white;
+      border: 0.1vw solid rgba(0, 0, 0, 0.1);
+      box-shadow: 4px 3px 8px rgba(0, 0, 0, 0.1);
+
+      .upper {
+        width: 100%;
+        height: 10%;
+        margin: 0;
+
+        .returnBtn {
+          width: 12%;
+          height: 2vw;
+        }
+        p {
+          font-size: 2vw;
+        }
+      }
+
+      //userEdit
+      form {
+        height: 75%;
+
+        label {
+          display: block;
+          margin: 0;
+          padding: 1vw;
+          padding-top: 1vw;
+          padding-bottom: 0.9vw;
+          font-size: 1.3vw;
+
+          input {
+            outline: 0.1vw solid cl.$bl;
+            width: 45%;
+            height: 2vw;
+            text-align: center;
+          }
+        }
+        :nth-child(4) {
+          padding-bottom: 0;
+        }
+
+        .error {
+          color: rgb(150, 75, 75);
+          font-size: 1.3vw;
+        }
+      }
+      .submitBtn {
+        margin: 2vw auto;
+        font-size: 1.4vw;
+        border: 0.5vw solid cl.$bl;
+        bottom: 10%;
+        height: 4vw;
+        width: 6vw;
+        padding: 0;
+
+        &:disabled {
+          padding: 0.5vw 0.9vw;
+        }
+      }
+
+      //quitコンポーネント
+      .form {
+        height: 66vw;
+
+        p {
+          margin: 2vw auto;
+          font-size: 1.8vw;
+        }
+        input {
+          outline: 0.15vw solid cl.$bl;
+          color: gray;
+          text-align: center;
+          width: 70%;
+          display: block;
+          margin: auto;
+        }
+        .submitBtn {
+          margin-top: 9vw;
+        }
+        .error {
+          width: 100%;
+          color: rgb(150, 75, 75);
+          font-size: 1.5vw;
+          margin: 1vw;
+        }
+      }
+    }
+  }
+}

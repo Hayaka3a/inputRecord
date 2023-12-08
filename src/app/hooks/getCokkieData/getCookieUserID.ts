@@ -12,15 +12,15 @@ export default function getCookieUserID(
       ?.split("=");
 
     if (strID) {
-      const userID = Number(strID[1]);
-      setUserID(userID);
+      const userID = strID[1];
+      setUserID(Number(userID));
       return userID;
     }
   } else {
     setUserID(0);
-    return 0;
+    return;
   }
   if (!cookie) {
-    return 0;
+    return;
   }
 }

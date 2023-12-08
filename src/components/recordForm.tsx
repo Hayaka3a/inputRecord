@@ -27,6 +27,7 @@ export default function RecordForm() {
     date: date,
     category: selectCategory,
     yearMonth: "",
+    status: false,
   };
 
   const handleSubmit = () => {
